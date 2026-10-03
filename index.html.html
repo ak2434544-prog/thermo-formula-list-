@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Thermodynamics Formula Sheet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#fbfaf7;--fg:#1f2430;--mut:#5d6575;--card:#fff;--bd:#e0ddd4;--ac:#7a1f2b;--hl:#fdf1d6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161c;--fg:#e8e6df;--mut:#9aa1b0;--card:#1c1f27;--bd:#333845;--ac:#e8909a;--hl:#3a3220}}
+:root[data-theme="dark"]{--bg:#14161c;--fg:#e8e6df;--mut:#9aa1b0;--card:#1c1f27;--bd:#333845;--ac:#e8909a;--hl:#3a3220}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 Georgia,serif}
+main{max-width:980px;margin:0 auto;padding:20px 14px 40px}
+h1{color:var(--ac);margin:0 0 4px}h2{color:var(--ac);font-size:1.2rem;margin:0 0 8px}
+.sub{color:var(--mut);margin:0 0 16px}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+nav a{font:13px system-ui,sans-serif;padding:4px 10px;border:1px solid var(--bd);border-radius:14px;color:var(--fg);text-decoration:none;background:var(--card)}
+section{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px;margin-bottom:16px}
+.w{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-top:1px solid var(--bd)}
+th{font:600 12px system-ui,sans-serif;color:var(--mut);text-transform:uppercase;border-top:0}
+td:first-child{font-family:"Cambria Math",Georgia,serif;font-size:16px;white-space:nowrap;font-weight:600}
+.t{background:var(--hl);border-radius:8px;padding:8px 10px;margin-top:10px;font-size:14.5px}
+.ex{color:var(--mut);font-size:14px;margin-top:8px}
+.warn{border-color:var(--ac)}
+ul{margin:6px 0 0;padding-left:20px}
+</style></head><body><main>
+<h1>Thermodynamics: Formula Sheet</h1>
+<p class="sub">Built from your slides, grouped by topic: formula, where to use it, and a memory trick. Worked answers are the ones in your deck.</p>
+<nav><a href="#t1">1 First law</a><a href="#t2">2 Enthalpy</a><a href="#t3">3 Heat capacity</a><a href="#t4">4 Entropy</a><a href="#t5">5 Ideal gas ΔS</a><a href="#t6">6 Mixing</a><a href="#t7">7 A and G</a><a href="#t8">8 G vs P, T</a><a href="#t9">9 Gibbs-Helmholtz</a><a href="#t10">10 Isotherm</a><a href="#t11">11 Isochore</a><a href="#t12">12 Clapeyron</a><a href="#t13">13 Chem. potential</a><a href="#tx">Exam checklist</a></nav>
+
+<section id="t1"><h2>1. State/path functions and the First Law</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>ΔE = E<sub>f</sub> − E<sub>i</sub></td><td>Only changes in E are used, never absolute E. State functions: P, V, T, E, H, S, G, A. Path functions: q, w (so write q, not Δq).</td><td>"Only q and w are Path; everything else is State."</td></tr>
+<tr><td>ΔE = q + w</td><td>Master equation. Heat in +, heat out −. Work done ON system +, work done BY system −.</td><td>Bank account: money coming in is +.</td></tr>
+<tr><td>Isolated: ΔE = 0<br>Cyclic: ΔE = 0, q = −w<br>Const V: ΔE = q<sub>v</sub><br>Adiabatic: ΔE = w</td><td>Pick the special case from the keyword in the question.</td><td>Keyword → term that vanishes: isolated (q, w), cyclic (ΔE), isochoric (w), adiabatic (q).</td></tr>
+<tr><td>w = −PΔV = −Δn<sub>g</sub>RT</td><td>Expansion work for gas reactions in an open beaker. Closed rigid vessel: w = 0.</td><td>Expansion = system loses energy, so the minus sign.</td></tr>
+</table></div>
+<div class="ex">Deck examples: motor 15 kJ/s with 2 kJ/s lost → ΔE = −17 kJ; spring +100 J, −15 J → +85 J. Fe + HCl, 63 g, open beaker → w ≈ −2.79 kJ (closed: 0).</div></section>
+
+<section id="t2"><h2>2. Enthalpy</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>H = E + PV<br>ΔH = ΔE + PΔV</td><td>Definition. H is extensive and a state function.</td><td>"H = E + PV" (Eat PiVa).</td></tr>
+<tr><td>ΔH = q<sub>p</sub></td><td>Heat measured at constant pressure (open flask, all lab reactions).</td><td>p-lab → q<sub>p</sub> = ΔH. Bomb calorimeter → q<sub>v</sub> = ΔE.</td></tr>
+<tr><td>ΔH = ΔE + Δn<sub>g</sub>RT<br>Δn<sub>g</sub> = n<sub>gas products</sub> − n<sub>gas reactants</sub></td><td>Convert between ΔH and ΔE. Count only gases; ignore (l) and (s). Use R = 8.314 J/mol·K, T in K, convert kJ to J.</td><td>"Products minus Reactants, Gases only". If Δn<sub>g</sub> = 0 then ΔH = ΔE (the Dec-2024 end-sem PYQ).</td></tr>
+<tr><td>Phase change at 1 atm: w = RT, ΔE = ΔH − RT</td><td>Vaporisation: liquid volume is negligible, so PΔV = RT.</td><td>Evaporation: ΔE is smaller than ΔH by RT.</td></tr>
+</table></div>
+<div class="ex">Deck examples: CH₄ formation, ΔH = −74.85 kJ → ΔE = −72.37 kJ (Δn<sub>g</sub> = −1). Heptane, q<sub>v</sub> = −4793 kJ, Δn<sub>g</sub> = −4 → ΔH = −4802.9 kJ. Br₂ vaporisation: ΔH = 29.2, ΔE = 26.44 kJ/mol.</div></section>
+
+<section id="t3"><h2>3. Heat capacity</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>C = q/ΔT = q/(T₂ − T₁)</td><td>Heat needed per degree rise.</td><td>"Heat per degree."</td></tr>
+<tr><td>C<sub>p</sub> − C<sub>v</sub> = nR<br>C<sub>p,m</sub> − C<sub>v,m</sub> = R</td><td>Switch between C<sub>p</sub> and C<sub>v</sub> for an ideal gas. R = 8.314 J or 1.987 cal.</td><td>C<sub>p</sub> is bigger (extra work to expand), so "p minus v = R".</td></tr>
+</table></div></section>
+
+<section id="t4"><h2>4. Entropy: definition, standard entropy, 3rd law</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>ΔS = S<sub>f</sub> − S<sub>i</sub></td><td>Isolated system: ΔS &gt; 0 means spontaneous.</td><td>Disorder wins: isolated + spontaneous → ΔS up.</td></tr>
+<tr><td>ΔS = q<sub>rev</sub>/T</td><td>Reversible, isothermal heat flow. Phase changes: ΔS = ΔH<sub>trans</sub>/T at the transition temperature (K).</td><td>"q over T": heat in is +, heat out is −. Always use K.</td></tr>
+<tr><td>ΔS° = ΣS°(products) − ΣS°(reactants)</td><td>Entropy change of a reaction from tables. Multiply each S° by its stoichiometric coefficient.</td><td>Always "Products − Reactants".</td></tr>
+<tr><td>S°<sub>f</sub> = S°(compound) − ΣS°(elements)</td><td>Entropy of formation.</td><td>Same pattern, elements on the reactant side.</td></tr>
+<tr><td>3rd law: S = 0 for a perfect crystal at 0 K</td><td>S° &gt; 0 for any substance above 0 K. Units J mol⁻¹K⁻¹; 1 eu = 4.184 J/mol·K.</td><td>"Perfect crystal, zero kelvin, zero entropy."</td></tr>
+</table></div>
+<div class="ex">Deck examples: water, 9650 cal/mol at 373 K → 25.87 cal/K·mol. Ice melting, 80×18 cal at 273 K → 5.274 cal/K·mol. Urea hydrolysis ΔS° = 84.81 cal/K. S°<sub>f</sub>(CO₂) = 2.86 J/K.</div></section>
+
+<section id="t5"><h2>5. Entropy change of an ideal gas</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>ΔS = nC<sub>v</sub> ln(T₂/T₁) + nR ln(V₂/V₁)</td><td>Given T and V.</td><td>"Volume goes with C<sub>v</sub>."</td></tr>
+<tr><td>ΔS = nC<sub>p</sub> ln(T₂/T₁) + nR ln(P₁/P₂)</td><td>Given T and P. Note the pressure ratio is inverted.</td><td>"Pressure goes with C<sub>p</sub>", and P is flipped because V ∝ 1/P.</td></tr>
+<tr><td>Isothermal: ΔS = nR ln(V₂/V₁) = nR ln(P₁/P₂)<br>Isobaric: ΔS = nC<sub>p</sub> ln(T₂/T₁)<br>Isochoric: ΔS = nC<sub>v</sub> ln(T₂/T₁)</td><td>Delete the term that is constant. If the sheet gives log₁₀, multiply by 2.303.</td><td>Constant T kills the T-term; constant P or V picks C<sub>p</sub> or C<sub>v</sub>.</td></tr>
+</table></div>
+<div class="ex">Deck examples: 5 mol, V×6 at 330 K → 74.5 J/K. 1 mol heated 20→40 °C at const P, C<sub>p</sub> = 6.189 → 0.4087 cal/K. 1 mol, 15 L/2 atm → 50 L/1 atm → 5.156 cal/K.</div>
+<div class="t">Check: expansion gives ΔS &gt; 0 (V₂ &gt; V₁ or P₁ &gt; P₂); compression gives ΔS &lt; 0.</div></section>
+
+<section id="t6"><h2>6. Entropy of mixing</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>Δ<sub>mix</sub>S = −R Σ n<sub>i</sub> ln χ<sub>i</sub> = −nR Σ χ<sub>i</sub> ln χ<sub>i</sub></td><td>Mixing ideal gases at constant T, P. χ<sub>i</sub> = n<sub>i</sub>/n<sub>total</sub>. Add one term per gas, however many gases there are.</td><td>The minus sign cancels the negative ln χ, so the answer is always positive.</td></tr>
+<tr><td>Max at χ₁ = χ₂ = 0.5</td><td>Proof question (PYQ): put x₁ = x, x₂ = 1 − x, set d(ΔS)/dx = 0, which gives ln[x/(1 − x)] = 0, so x = 0.5.</td><td>"Equal parts mix the messiest."</td></tr>
+</table></div>
+<div class="ex">Mid-sem Autumn 2025: 1 CO₂ + 1 N₂ + 2 O₂ at 300 K → −R(1 ln¼ + 1 ln¼ + 2 ln½) = 34.6 J/K.</div></section>
+
+<section id="t7"><h2>7. Free energy (G) and work function (A)</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>A = E − TS; ΔA = ΔE − TΔS<br>G = H − TS; ΔG = ΔH − TΔS</td><td>ΔG decides spontaneity at constant T, P. A is the same idea at constant T, V.</td><td>"G goes with H, A goes with E" (G-H, A-E).</td></tr>
+<tr><td>−ΔA = w<sub>max</sub> (reversible work done by system)</td><td>Maximum work obtainable (Helmholtz energy).</td><td>A = "Achievable work".</td></tr>
+<tr><td>−ΔG = w − PΔV = net (non-expansion) work</td><td>Useful work, e.g. electrical work from a cell.</td><td>Free energy = what is left after paying the expansion tax.</td></tr>
+<tr><td>ΔG &lt; 0 spontaneous; = 0 equilibrium; &gt; 0 non-spontaneous</td><td>Four cases: (ΔH−, ΔS+) always spontaneous. (ΔH+, ΔS−) never. (−, −) spontaneous at low T. (+, +) spontaneous at high T.</td><td>"Low T: ΔH decides. High T: TΔS decides." Same signs means temperature decides.</td></tr>
+</table></div></section>
+
+<section id="t8"><h2>8. G with pressure and temperature</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>dG = V dP − S dT</td><td>Parent equation. Const T: dG = V dP. Const P: dG = −S dT.</td><td>"VP minus ST" (V then P, S then T).</td></tr>
+<tr><td>(∂G/∂P)<sub>T</sub> = V; (∂G/∂T)<sub>P</sub> = −S</td><td>Read off from dG. Entropy is the negative slope of G vs T.</td><td>The variable you differentiate by is the partner of the one you keep.</td></tr>
+<tr><td>ΔG = nRT ln(P₂/P₁) = 2.303 nRT log(P₂/P₁)</td><td>Isothermal change of pressure for an ideal gas, so it works for reversible or irreversible paths (G is a state function).</td><td>P₂ over P₁: compression gives ΔG &gt; 0.</td></tr>
+<tr><td>ΔG° = ΣΔG°<sub>f</sub>(products) − ΣΔG°<sub>f</sub>(reactants)</td><td>Standard reaction free energy. ΔG°<sub>f</sub> of an element is 0.</td><td>Products − Reactants, again.</td></tr>
+<tr><td>ΔS = (ΔH − ΔG)/T</td><td>Rearranged ΔG = ΔH − TΔS to find ΔS; then reuse it for ΔG at another T.</td><td>Solve for ΔS first, then plug in the new T.</td></tr>
+</table></div>
+<div class="ex">Deck examples: 4 mol, 10→1 atm, 298 K → −22823 J. ΔG = −16, ΔH = −10 kcal at 300 K → ΔS = 20 cal/K, ΔG(330 K) = −16.6 kcal. Water → steam at 100 °C, 1→0.5 atm → −513.82 cal (use R = 1.987; the phase change itself has ΔG = 0). CO + ½O₂ → CO₂: ΔG° = −257.2 kJ.</div></section>
+
+<section id="t9"><h2>9. Gibbs-Helmholtz equation</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>ΔG = ΔH + T[∂(ΔG)/∂T]<sub>P</sub></td><td>Main form. Given ΔG at two temperatures, slope ≈ (ΔG₂ − ΔG₁)/(T₂ − T₁) and ΔG at the middle T ≈ average. Then solve for ΔH.</td><td>"G = H + T·slope". Check units: the slope in J/K must become kJ/K.</td></tr>
+<tr><td>[∂(G/T)/∂T]<sub>P</sub> = −H/T²<br>[∂(ΔG/T)/∂T]<sub>P</sub> = −ΔH/T²</td><td>Derivation and "show that" questions. Start from G = H − TS, divide by T², use the quotient rule.</td><td>"H over T-squared with a minus."</td></tr>
+<tr><td>ΔA = ΔE + T[∂(ΔA)/∂T]<sub>V</sub></td><td>Same equation with A, E, and constant V.</td><td>Swap G→A, H→E, P→V.</td></tr>
+</table></div>
+<div class="ex">Deck examples: ΔH = −264.93 kJ, slope 19.58 J/K at 373 K → ΔG = −257.63 kJ. ΔG = −91.21 (293 K), −89.12 (303 K) → slope 0.209 kJ/K, ΔG(298) = −90.165 → ΔH = −152.447 kJ. Practice slide (−86 at 298 K, −84 at 308 K, find ΔH at 303 K): slope = 0.2 kJ/K, avg ΔG = −85, ΔH = −85 − 303(0.2) = −145.6 kJ (my working, not shown in the deck).</div>
+<h2 style="margin-top:14px">Application to cells (Daniel cell)</h2><div class="w"><table>
+<tr><td>ΔG = −nFE</td><td>Electrical work = nFE. Use for E.M.F. ↔ ΔG.</td><td>"G equals minus nFE" (n-F-E).</td></tr>
+<tr><td>ΔS = nF(∂E/∂T)<sub>P</sub></td><td>Entropy from temperature coefficient of E.M.F.</td><td>ΔS = −∂ΔG/∂T gives the sign flip.</td></tr>
+<tr><td>ΔH = −nF[E − T(∂E/∂T)<sub>P</sub>]</td><td>Enthalpy of cell reaction.</td><td>Substitute ΔG = −nFE into Gibbs-Helmholtz.</td></tr>
+</table></div></section>
+
+<section id="t10"><h2>10. Van't Hoff isotherm</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>G = G° + RT ln P</td><td>Free energy per mole of a gas at pressure P.</td><td>Standard value plus "RT ln P".</td></tr>
+<tr><td>ΔG = ΔG° + RT ln [(P<sub>C</sub><sup>c</sup>P<sub>D</sub><sup>d</sup>)/(P<sub>A</sub><sup>a</sup>P<sub>B</sub><sup>b</sup>)]</td><td>ΔG at any non-equilibrium pressures. The log term is the reaction quotient Q<sub>p</sub>.</td><td>Products over reactants, each raised to its coefficient.</td></tr>
+<tr><td>ΔG° = −RT ln K = −2.303 RT log K</td><td>At equilibrium ΔG = 0. Use to get K from ΔG° (or the reverse).</td><td>ΔG° negative → K &gt; 1; ΔG° positive → K &lt; 1.</td></tr>
+</table></div>
+<div class="ex">Deck examples: ΔG° = 71.128 kJ at 2000 K → log K<sub>p</sub> = −1.857, K<sub>p</sub> = 0.0139. ΔG° = 1×10⁵ J at 673 K → K<sub>p</sub> = 1.737×10⁻⁸.</div></section>
+
+<section id="t11"><h2>11. Van't Hoff isochore (K vs T)</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>ln K = −ΔH°/RT + ΔS°/R</td><td>Straight line: ln K vs 1/T has slope −ΔH°/R and intercept ΔS°/R.</td><td>"y = mx + c" with x = 1/T.</td></tr>
+<tr><td>ln(K₂/K₁) = (ΔH°/R)(T₂ − T₁)/(T₁T₂)<br>log(K₂/K₁) = ΔH°/(2.303R) · (T₂ − T₁)/(T₁T₂)</td><td>Find K₂ at a new T, or find ΔH° from two K values. Then ΔG° = −2.303RT log K and ΔS° = (ΔH° − ΔG°)/T.</td><td>Subscript 2 on top everywhere. Endothermic (ΔH &gt; 0): K rises with T.</td></tr>
+</table></div>
+<div class="ex">Deck examples: K<sub>p</sub> = 10⁻¹² at 600 K, 10⁻⁷ at 700 K → ΔH = 402.09 kJ. H₂ + S ⇌ H₂S, K = 18.5 (925 K), 9.25 (1000 K) → ΔH° = −71.08 kJ, ΔG° = −22.4 kJ, ΔS° = −52.6 J/K.</div></section>
+
+<section id="t12"><h2>12. Clapeyron and Clausius-Clapeyron</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>dP/dT = ΔH/[T(V<sub>B</sub> − V<sub>A</sub>)] = ΔS/ΔV</td><td>Any two-phase equilibrium of one substance (melting, vaporisation). Derived from G<sub>A</sub> = G<sub>B</sub> and dG = VdP − SdT, with ΔS = ΔH/T.</td><td>"Slope of P-T line = ΔH over TΔV".</td></tr>
+<tr><td>d ln P/dT = ΔH<sub>v</sub>/RT²</td><td>Liquid ⇌ vapour: V<sub>v</sub> ≫ V<sub>l</sub> and V<sub>v</sub> = RT/P (ideal).</td><td>Looks like the isochore: ΔH/RT².</td></tr>
+<tr><td>ln(P₂/P₁) = (ΔH<sub>v</sub>/R)(1/T₁ − 1/T₂) = (ΔH<sub>v</sub>/R)(T₂ − T₁)/(T₁T₂)<br>log₁₀(P₂/P₁) = ΔH<sub>v</sub>/(2.303R) · (…)</td><td>Three uses: (1) find ΔH<sub>v</sub>; (2) find boiling point at a new pressure; (3) find vapour pressure at a new T. With R = 1.987 cal, 2.303R = 4.576.</td><td>Higher T goes with higher P. If P₂ &gt; P₁ then T₂ &gt; T₁, so check your answer's direction.</td></tr>
+</table></div>
+<div class="t">Normal boiling point means P = 760 mmHg (given implicitly). Use K, keep P units the same on both sides, and match R to the energy unit (8.314 J / 0.008314 kJ / 1.987 cal).</div>
+<div class="ex">Deck answers: water, 634 mm (95 °C) and 760 mm (100 °C) → ΔH<sub>v</sub> = 9886 cal/mol. Water boils at 374 K (101 °C) under 787 mm. Water at 90 °C → 52.88 cm. 1-propanol at 52.8 °C → 100.2 torr. Compound, 24.3 torr (273 K), 135 torr (325 K) → 24.3 kJ/mol. Liquid with 6.91 mmHg at 0 °C, n.b.p. 105 °C → 38.4 kJ/mol. CCl₄ → 31.4 kJ/mol. Hexane at 25 °C → 171 torr.</div></section>
+
+<section id="t13"><h2>13. Partial molar properties and chemical potential</h2><div class="w"><table>
+<tr><th>Formula</th><th>Where / how to use</th><th>Trick</th></tr>
+<tr><td>X̄<sub>i</sub> = (∂X/∂n<sub>i</sub>)<sub>T,P,n<sub>j</sub></sub></td><td>Contribution of 1 mole of component i to extensive property X (V, E, H, S, G, A) in a mixture.</td><td>Hold T, P and the other moles fixed.</td></tr>
+<tr><td>X = n₁X̄₁ + n₂X̄₂ + …</td><td>Total property of a mixture from partial molar values.</td><td>"Total = Σ moles × partial".</td></tr>
+<tr><td>μ<sub>i</sub> = (∂G/∂n<sub>i</sub>)<sub>T,P,n<sub>j</sub></sub> = Ḡ<sub>i</sub></td><td>Chemical potential: intensive, drives matter from high μ to low μ, equal everywhere at equilibrium.</td><td>μ = "escaping tendency".</td></tr>
+<tr><td>dG = −S dT + V dP + Σ μ<sub>i</sub> dn<sub>i</sub><br>(G)<sub>T,P</sub> = Σ n<sub>i</sub>μ<sub>i</sub></td><td>Open systems (composition changes).</td><td>dG = VdP − SdT plus a "μ dn" term.</td></tr>
+<tr><td>Σ n<sub>i</sub> dμ<sub>i</sub> = 0</td><td>Gibbs-Duhem at constant T, P. If one μ rises, another must fall.</td><td>"Sum of n dμ is zero".</td></tr>
+<tr><td>(∂μ<sub>i</sub>/∂T)<sub>P</sub> = −S̄<sub>i</sub><br>(∂μ<sub>i</sub>/∂P)<sub>T</sub> = V̄<sub>i</sub></td><td>Variation of μ with T and P (from mixed second derivatives of G).</td><td>Same pattern as (∂G/∂T) = −S and (∂G/∂P) = V.</td></tr>
+<tr><td>μ = μ° + RT ln P<br>Δμ = RT ln(P₂/P₁)</td><td>Ideal gas change of μ with pressure.</td><td>Same as ΔG for 1 mole.</td></tr>
+</table></div></section>
+
+<section id="tx" class="warn"><h2>Exam checklist and slide corrections</h2>
+<ul>
+<li>Temperature in K; pick R to match units (8.314 J, 0.008314 kJ, 1.987 cal); use 2.303 only with log₁₀.</li>
+<li>"Products − Reactants" appears in ΔS°, ΔG°, Δn<sub>g</sub> and ΔH.</li>
+<li>Write the formula, substitute with units, then box the answer; method marks matter most in derivations.</li>
+<li>Derivations to practise: ΔH = ΔE + Δn<sub>g</sub>RT, ΔS of an ideal gas, entropy of mixing, dG = VdP − SdT, Gibbs-Helmholtz, Clausius-Clapeyron, Van't Hoff isotherm and isochore, Gibbs-Duhem.</li>
+</ul>
+<div class="t"><b>Check these slide details.</b> (1) Slide 53 writes ΔE = q − w (work done by system), while slides 12-16 use ΔE = q + w. Stick to the convention your instructor uses. (2) Slide 107 loses the minus sign in the last step; the correct result is (∂μ/∂T)<sub>P</sub> = −S̄. (3) Slide 109 gives −3.434 J/mol, but the pressure goes from 0.25 to 1 atm, so Δμ = RT ln(1/0.25) = +3434 J/mol (about +3.43 kJ/mol). (4) Slide 49 labels 34.6 as J mol⁻¹K⁻¹; it is the total ΔS<sub>mix</sub> in J/K.</div></section>
+</main></body></html>
